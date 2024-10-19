@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { BaseComponent } from '../../shared/base/base.component';
 import { SubjectOverviewService } from '../../services';
-import { map, Observable, takeUntil } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { ApplicationArea, SubjectOverview } from '../../models';
 import { CommonModule } from '@angular/common';
 import { FilterComponent } from '../filter/filter.component';
