@@ -1,0 +1,22 @@
+.form-field-spacing {
+    margin-right: 16px;
+}
+
+.go-button {
+    padding: 1.5%;
+    width: 5%;
+    margin-bottom: 1%;
+    background-color: #009688 !important;
+    color: white !important;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.disabled {
+    background-color: #009688;
+    opacity: 0.5;
+    cursor: not-allowed;
+    color: #ffffff; 
+    pointer-events: none;
+    border: 1px solid #009688;
+}

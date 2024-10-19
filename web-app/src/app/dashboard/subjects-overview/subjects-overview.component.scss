@@ -1,0 +1,35 @@
+@import '../../../styles.scss';
+.container {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+  
+    .mat-mdc-header-row {
+      @extend .mat-mdc-header-row-common;
+    }
+  
+    .mat-mdc-row {
+      @extend .mat-mdc-row-common;
+    }
+  }
+  
+  .not-found-content {
+    @extend .not-found-common;
+  }
+  
+  @media (max-width: 600px) {
+    table {
+  
+      .mat-mdc-cell,
+      .mat-mdc-header-cell {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+  }
+  
+  tr.mat-mdc-footer-row td {
+    font-weight: bold;
+  }
+}

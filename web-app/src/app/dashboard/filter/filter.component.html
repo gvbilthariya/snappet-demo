@@ -1,0 +1,20 @@
+<form [formGroup]="form">
+    <mat-form-field class="form-field-spacing">
+      <mat-label>Report Type</mat-label>
+      <mat-select formControlName="reportTimeFrame" name="Type of report">
+        @for (timeFrame of fixedTimeFrames; track timeFrame) {
+          <mat-option [value]="timeFrame.value">{{timeFrame.viewValue}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-field-spacing">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input formGroupName="rangeGroup" [rangePicker]="picker" [disabled]="!reportRangeCustom">
+          <input matStartDate formControlName="start" placeholder="Start date" >
+          <input matEndDate formControlName="end" placeholder="End date">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <button class="go-button" mat-flat-button (click)="customRangeChanged()" [class.disabled]="!isRangeControlValid" [disabled]="!isRangeControlValid">Go</button>
+  </form>

@@ -1,0 +1,71 @@
+@import '../../../styles.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .top-fixed {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+
+    .action-buttons {
+      padding-bottom: 20px;
+
+      .btns {
+        width: 7%;
+        background-color: #009688 !important;
+        color: white !important;
+        font-weight: 200;
+        cursor: pointer;
+        border-radius: 30px;
+        margin-right: 0.5%;
+
+      }
+    }
+  }
+
+  .bottom-scrollable {
+    margin-top: 17vh;
+    overflow-y: auto;
+    height: calc(100% - 10vh);
+  }
+
+  .subject-table {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #009688;
+  }
+
+  .mat-mdc-table {
+    width: 100%;
+
+    th.mat-mdc-header-cell,
+    td.mat-mdc-cell {
+      width: 150px;
+      max-width: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .not-found-content {
+    @extend .not-found-common;
+    margin-top: 14vh;
+  }
+
+  .headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .headers-align .mat-mdc-form-field .mat-mdc-form-field {
+    margin-left: 8px;
+  }
+}

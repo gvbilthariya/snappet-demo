@@ -1,0 +1,198 @@
+@import '../../../styles.scss';
+
+.so-container {
+  display: flex;
+  flex-flow: row;
+  height: 76vh;
+
+  .text-head1 {
+    font-weight: 500 !important;
+    font-size: 14px;
+    margin-bottom: 0.5% !important;
+  }
+
+  .text-head2 {
+    margin-top: -2%;
+    font-size: 13px;
+    margin-bottom: 0%
+  }
+
+  .table {
+    overflow: auto;
+    height: 76vh;
+  }
+
+  .flex-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-form-field {
+    width: 98%;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+
+    .mat-mdc-header-row {
+      @extend .mat-mdc-header-row-common;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .mat-mdc-row {
+      @extend .mat-mdc-row-common;
+      cursor: pointer;
+    }
+  }
+
+  .student-details {
+    display: flex;
+    flex-direction: row;
+    height: 84vh;
+
+    .student-detail-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5%;
+      margin-left: 2%;
+    }
+
+    .student-header {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    .student-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .student-info h2 {
+      margin: 0;
+    }
+
+    .progress-overview,
+    .tabs-section {
+      background-color: #fff;
+      padding: 1.5%
+    }
+
+    .detail-right {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5%;
+      margin-left: 1%;
+    }
+
+    .progress,
+    .recent-activity {
+      background-color: #fff;
+      padding: 1.5%;
+      margin-left: 2%;
+      height: fit-content;
+      width: 19vw !important;
+
+      .mat-list {
+        padding-left: 3% !important;
+      }
+    }
+
+    .progress-bars {
+      margin: 10px 0;
+    }
+
+    .tabs-section mat-tab-group {
+      width: 100%;
+    }
+
+    .subject-breakdown mat-list-item,
+    .learning-objectives mat-list-item,
+    .strengths-weaknesses mat-list-item,
+    .recent-activity mat-list-item {
+      padding: 10px;
+    }
+
+    .subject-breakdown mat-list-item h3,
+    .learning-objectives mat-list-item h3,
+    .strengths-weaknesses mat-list-item h3 {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+
+  ::ng-deep {
+    .mat-mdc-tab-list .mat-mdc-tab-labels {
+      background-color: #e6e4e4;
+    }
+
+
+    .mdc-tab--active {
+      background-color: #009688 !important;
+
+      .mdc-tab__text-label {
+        color: white !important;
+      }
+    }
+
+    .mat-mdc-tab-header-pagination {
+      display: none;
+    }
+
+    .mdc-tab {
+      height: 5vh !important;
+
+      .mdc-tab__text-label {
+        :hover {
+          color: white
+        }
+      }
+    }
+
+    .mat-mdc-tab-body-content {
+      max-height: 84vh;
+      overflow: auto !important;
+    }
+
+    .mat-mdc-tab.mdc-tab {
+      flex-grow: 0 !important;
+    }
+
+    .mat-mdc-tab-body-wrapper {
+      padding-left: 1%;
+      padding-right: 1%;
+      padding-top: 2%;
+      height: 49vh;
+    }
+
+    .mdc-tab-indicator__content {
+      height: 8px;
+    }
+
+    .mat-list {
+      padding-top: 3% !important;
+      padding-bottom: 2% !important;
+    }
+
+    .mat-mdc-card {
+      padding: 3%;
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+  }
+
+  .not-found-content {
+    @extend .not-found-common;
+    margin-top: 0vh;
+    width: 100%;
+  }
+}

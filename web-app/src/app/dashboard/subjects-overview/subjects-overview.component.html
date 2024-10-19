@@ -1,0 +1,53 @@
+<div class="container">
+  <div>
+    <app-filter [applicationArea]="applicationArea"></app-filter>
+  </div>
+  <div *ngIf="!(subjectsOverViewDataLoading$ | async)">
+    <div *ngIf="(subjectsOverViewData$ | async)!.length > 0; else noRecordsTemplate">
+      <table class="mat-table" mat-table [dataSource]="subjectsOverViewData$" class="mat-elevation-z8 box">
+        <ng-container matColumnDef="Subject">
+          <th mat-header-cell *matHeaderCellDef> Subject </th>
+          <td mat-cell *matCellDef="let data"> {{ data.subject}} </td>
+          <td mat-footer-cell *matFooterCellDef> Total </td>
+        </ng-container>
+
+        <ng-container matColumnDef="exercisesCompleted">
+          <th mat-header-cell *matHeaderCellDef> Exercises Completed </th>
+          <td mat-cell *matCellDef="let data"> {{ data.totalExercisesCompleted}} </td>
+          <td mat-footer-cell *matFooterCellDef> {{ getTotalEC$() | async }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="learningObjectives">
+          <th mat-header-cell *matHeaderCellDef> Total Learning Objectives </th>
+          <td mat-cell *matCellDef="let data"> {{ data.learningObjectives}} </td>
+          <td mat-footer-cell *matFooterCellDef> {{ getTotalLO$() | async }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="averageProgress">
+          <th mat-header-cell *matHeaderCellDef> Average Progress (%) </th>
+          <td mat-cell *matCellDef="let data"> {{ data.averageProgress}} </td>
+          <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+
+        <ng-container matColumnDef="correctAnswers">
+          <th mat-header-cell *matHeaderCellDef> Correct Answers (%) </th>
+          <td mat-cell *matCellDef="let data"> {{ data.correctness}} 
+            <mat-progress-bar mode="determinate" [value]="data.correctness"
+            color="accent"></mat-progress-bar>
+          </td>
+          <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+      </table>
+    </div>
+  </div>
+</div>
+<ng-template #noRecordsTemplate>
+  <div class="not-found-content">
+    <p><b>No Records Found.</b></p>
+    <img src="../../../assets/no-records.PNG">
+  </div>
+</ng-template>
