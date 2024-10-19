@@ -93,6 +93,10 @@ Make sure you have the following installed:
    **Not Found Page**
     ![Not found](/readme-assets/404.PNG?raw=true)
 
+-----------------------------------------------------------------------------
+### Application URL: https://purple-grass-0c75ef900.5.azurestaticapps.net/
+-----------------------------------------------------------------------------
+
 
   
 
