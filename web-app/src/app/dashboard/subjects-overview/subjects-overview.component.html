@@ -2,7 +2,7 @@
   <div>
     <app-filter [applicationArea]="applicationArea"></app-filter>
   </div>
-  <div *ngIf="!(subjectsOverViewDataLoading$ | async)">
+  <div *ngIf="!(subjectsOverViewDataLoading$ | async); else loader">
     <div *ngIf="(subjectsOverViewData$ | async)!.length > 0; else noRecordsTemplate">
       <table class="mat-table" mat-table [dataSource]="subjectsOverViewData$" class="mat-elevation-z8 box">
         <ng-container matColumnDef="Subject">
@@ -49,5 +49,11 @@
   <div class="not-found-content">
     <p><b>No Records Found.</b></p>
     <img src="../../../assets/no-records.PNG">
+  </div>
+</ng-template>
+
+<ng-template #loader>
+  <div class="not-found-content">
+    <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
   </div>
 </ng-template>

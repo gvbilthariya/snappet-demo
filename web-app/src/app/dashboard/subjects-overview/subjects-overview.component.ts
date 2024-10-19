@@ -7,11 +7,12 @@ import { ApplicationArea, SubjectOverview } from '../../models';
 import { CommonModule } from '@angular/common';
 import { FilterComponent } from '../filter/filter.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-overview',
   standalone: true,
-  imports: [MatTableModule, CommonModule, FilterComponent, MatProgressBarModule],
+  imports: [MatTableModule, CommonModule, FilterComponent, MatProgressBarModule, MatProgressSpinnerModule],
   templateUrl: './subjects-overview.component.html',
   styleUrl: './subjects-overview.component.scss'
 })
@@ -30,7 +31,7 @@ export class SubjectsOverviewComponent extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.subjectsOverViewData$ = this.subjectOverviewService.subjectsOverview$();
-    this.subjectsOverViewDataLoading$ =  this.subjectOverviewService.subjectsOverviewLoading$();
+    this.subjectsOverViewDataLoading$ = this.subjectOverviewService.subjectsOverviewLoading$();
     this.subjectOverviewService.load();
   }
 
